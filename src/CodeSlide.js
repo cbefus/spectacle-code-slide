@@ -197,8 +197,8 @@ class CodeSlide extends React.Component {
           "top": "90%",
           "left": "50%",
           "z-index": 9999,
-          "background": none,
-          "border": none,
+          "background": "none",
+          "border": "none",
           "outline": "0px"
         }}
       >
@@ -230,8 +230,8 @@ class CodeSlide extends React.Component {
           "top": "5%",
           "left": "50%",
           "z-index": 9999,
-          "background": none,
-          "border": none,
+          "background": "none",
+          "border": "none",
           "outline": "0px"
         }}
       >
