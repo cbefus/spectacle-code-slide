@@ -192,13 +192,15 @@ class CodeSlide extends React.Component {
       <button
         type="button"
         aria-label="Slide Down"
-        style="position: absolute;
-          top: 90%;
-          left: 50%;
-          z-index: 9999;
-          background: none;
-          border: none;
-          outline: 0px;"
+        style={{
+          "position": "absolute",
+          "top": "90%",
+          "left": "50%",
+          "z-index": 9999,
+          "background": none,
+          "border": none,
+          "outline": "0px"
+        }}
       >
         <svg
           width="32px"
@@ -206,9 +208,11 @@ class CodeSlide extends React.Component {
           viewBox="0 0 512 828.586"
           role="presentation"
           focusable="false"
-          style="fill: rgb(255, 102, 0);
-			      transition: fill 1s ease-in-out 0.2s;
-            transform: rotate(90deg);"
+          style={{
+            "fill": "rgb(255, 102, 0)",
+            "transition": "fill 1s ease- in -out 0.2s",
+            "transform": "rotate(90deg)"
+          }}
       >
           <path d="M97.707,0L0,97.707l316.586,316.586L0,730.88l97.707,97.706L512,414.293L97.707,0z"></path>
         </svg>
@@ -221,13 +225,15 @@ class CodeSlide extends React.Component {
       <button
         type="button"
         aria-label="Slide Up"
-        style="position: absolute;
-          top: 5%;
-          left: 50%;
-          z-index: 9999;
-          background: none;
-          border: none;
-          outline: 0px;"
+        style={{
+          "position": "absolute",
+          "top": "5%",
+          "left": "50%",
+          "z-index": 9999,
+          "background": none,
+          "border": none,
+          "outline": "0px"
+        }}
       >
         <svg
           width="32px"
@@ -235,9 +241,11 @@ class CodeSlide extends React.Component {
           viewBox="0 0 512 828.586"
           role="presentation"
           focusable="false"
-          style="fill: rgb(255, 102, 0);
-            transition: fill 1s ease-in-out 0.2s;
-            transform: rotate(-90deg);"
+          style={{
+            "fill": "rgb(255, 102, 0)",
+            "transition": "fill 1s ease-in-out 0.2s",
+            "transform": "rotate(-90deg)"
+          }}
         >
           <path d="M97.707,0L0,97.707l316.586,316.586L0,730.88l97.707,97.706L512,414.293L97.707,0z"></path>
         </svg>
