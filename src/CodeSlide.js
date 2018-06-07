@@ -69,7 +69,7 @@ class CodeSlide extends React.Component {
   };
 
   state = {
-    active: this.getStorageItem() || true
+    active: this.getStorageItem() || 0
   };
 
   componentWillMount() {
@@ -110,7 +110,7 @@ class CodeSlide extends React.Component {
   }
 
   getStorageItem() {
-    return +localStorage.getItem(this.getStorageId());
+    return localStorage.getItem(this.getStorageId());
   }
 
   setStorageItem(value) {
@@ -145,9 +145,9 @@ class CodeSlide extends React.Component {
 
   onKeyDown = e => {
     console.log("SHIRTS");
-    // if (!this.isSlideActive()) {
-    //   return;
-    // }
+    if (!this.isSlideActive()) {
+      return;
+    }
 
     let prev = this.state.active;
     let active = null;
