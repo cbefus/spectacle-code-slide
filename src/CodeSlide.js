@@ -110,7 +110,7 @@ class CodeSlide extends React.Component {
   }
 
   getStorageItem() {
-    return localStorage.getItem(this.getStorageId());
+    return +localStorage.getItem(this.getStorageId());
   }
 
   setStorageItem(value) {
