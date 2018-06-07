@@ -144,7 +144,6 @@ class CodeSlide extends React.Component {
   };
 
   onKeyDown = e => {
-    console.log("SHIRTS");
     if (!this.isSlideActive()) {
       return;
     }
@@ -157,7 +156,7 @@ class CodeSlide extends React.Component {
     } else if (e.which === 40) {
       active = prev + 1;
     }
-    console.log("SOCKS");
+
     if (active !== null) {
       e.preventDefault();
       active = clamp(active, 0, this.props.ranges.length - 1);
@@ -188,6 +187,64 @@ class CodeSlide extends React.Component {
     this.context.updateNotes(rangeNotes || notes);
   }
 
+  renderDownArrow() {
+    return (
+      <button
+        type="button"
+        aria-label="Slide Down"
+        style="position: absolute;
+          top: 90%;
+          left: 50%;
+          z-index: 9999;
+          background: none;
+          border: none;
+          outline: 0px;"
+      >
+        <svg
+          width="32px"
+          height="32px"
+          viewBox="0 0 512 828.586"
+          role="presentation"
+          focusable="false"
+          style="fill: rgb(255, 102, 0);
+			      transition: fill 1s ease-in-out 0.2s;
+            transform: rotate(90deg);"
+      >
+          <path d="M97.707,0L0,97.707l316.586,316.586L0,730.88l97.707,97.706L512,414.293L97.707,0z"></path>
+        </svg>
+      </button>
+    );
+  }
+
+  renderUpArrow() {
+    return (
+      <button
+        type="button"
+        aria-label="Slide Up"
+        style="position: absolute;
+          top: 5%;
+          left: 50%;
+          z-index: 9999;
+          background: none;
+          border: none;
+          outline: 0px;"
+      >
+        <svg
+          width="32px"
+          height="32px"
+          viewBox="0 0 512 828.586"
+          role="presentation"
+          focusable="false"
+          style="fill: rgb(255, 102, 0);
+            transition: fill 1s ease-in-out 0.2s;
+            transform: rotate(-90deg);"
+        >
+          <path d="M97.707,0L0,97.707l316.586,316.586L0,730.88l97.707,97.706L512,414.293L97.707,0z"></path>
+        </svg>
+      </button>
+    );
+  }
+
   render() {
     const {code, lang, ranges, color, bgColor, titleStyle, showLineNumbers, width, ...rest} = this.props;
     const {active} = this.state;
@@ -216,6 +273,7 @@ class CodeSlide extends React.Component {
 
     return (
       <Slide ref='slide' bgColor={slideBg} margin={1} {...rest}>
+        {this.state.active > 0 ? this.renderUpArrow() : null}
         {range.title && <CodeSlideTitle style={titleStyle}>{range.title}</CodeSlideTitle>}
 
         <pre ref="container" style={newStyle}>
@@ -225,6 +283,7 @@ class CodeSlide extends React.Component {
         {range.note && <CodeSlideNote>{range.note}</CodeSlideNote>}
 
         {range.image && <CodeSlideImage src={range.image}/>}
+        {this.state.active < this.props.ranges.length - 1 ? this.renderDownArrow() : null}
       </Slide>
     );
   }
