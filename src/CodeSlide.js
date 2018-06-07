@@ -144,6 +144,7 @@ class CodeSlide extends React.Component {
   };
 
   onKeyDown = e => {
+    console.log("SHIRTS");
     if (!this.isSlideActive()) {
       return;
     }
@@ -156,7 +157,7 @@ class CodeSlide extends React.Component {
     } else if (e.which === 40) {
       active = prev + 1;
     }
-
+    console.log("SOCKS");
     if (active !== null) {
       e.preventDefault();
       active = clamp(active, 0, this.props.ranges.length - 1);
