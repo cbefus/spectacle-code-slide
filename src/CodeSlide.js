@@ -188,7 +188,7 @@ class CodeSlide extends React.Component {
   }
 
   render() {
-    const {code, lang, ranges, color, bgColor, titleStyle, showLineNumbers, ...rest} = this.props;
+    const {code, lang, ranges, color, bgColor, titleStyle, showLineNumbers, width, ...rest} = this.props;
     const {active} = this.state;
 
     const range = ranges[active] || {};
@@ -199,6 +199,7 @@ class CodeSlide extends React.Component {
       ...style,
       color: color || style.color,
     };
+    if (width) newStyle.width = width;
 
     const lines = getHighlightedCodeLines(code, lang).map((line, index) => {
       return <div
