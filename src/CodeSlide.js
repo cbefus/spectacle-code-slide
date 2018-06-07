@@ -145,9 +145,9 @@ class CodeSlide extends React.Component {
 
   onKeyDown = e => {
     console.log("SHIRTS");
-    if (!this.isSlideActive()) {
-      return;
-    }
+    // if (!this.isSlideActive()) {
+    //   return;
+    // }
 
     let prev = this.state.active;
     let active = null;
