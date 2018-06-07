@@ -188,7 +188,7 @@ class CodeSlide extends React.Component {
   }
 
   render() {
-    const {code, lang, ranges, color, bgColor, notes, titleStyle, showLineNumbers, ...rest} = this.props;
+    const {code, lang, ranges, color, bgColor, titleStyle, showLineNumbers, ...rest} = this.props;
     const {active} = this.state;
 
     const range = ranges[active] || {};
