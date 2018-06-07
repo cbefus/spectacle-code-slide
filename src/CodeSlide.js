@@ -194,7 +194,7 @@ class CodeSlide extends React.Component {
         aria-label="Slide Down"
         style={{
           "position": "absolute",
-          "top": "90%",
+          "top": "120%",
           "left": "50%",
           "z-index": 9999,
           "background": "none",
