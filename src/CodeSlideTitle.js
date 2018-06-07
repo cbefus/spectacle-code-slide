@@ -16,9 +16,9 @@ const styles = {
 class CodeSlideTitle extends React.Component {
   render() {
     console.log("PANTS", this.props);
-    const style = [styles];
+    let style = styles;
     if (this.props.style) {
-      style.push(this.props.style)
+      style = Object.assign({}, styles, this.props.style);
     }
     return (
       <h1 style={style}>{this.props.children}</h1>
