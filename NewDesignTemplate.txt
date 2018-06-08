@@ -1,0 +1,29 @@
+
+
+
+
+
+Want this to look something like:
+
+const r1 = new CodeRange(startLine=0, endLine=linesLength);
+const r2 = ...
+const r3 = ...
+
+const h1 = new CodeHighlight(lineNum, startIndex=0, endIndex=line.size())
+const h2 = ...
+
+<CodeSlide lang="python" code={require(...)} transition={["slide"]}>
+    <CodePane codeTextSize="1em" ranges={[r1, r2]} highlights={[h1, h2]}>
+        <CodeTitle style="" position="center top">Foobar</CodeTitle>
+        <CodeGroupComment style="" range={r3}>Something about this code</CodeGroupComment>
+        <CodeLineComment style="" line={12} position="below">Something On this line</CodeLineComment>
+    </CodePane>
+</CodeSlide>
+
+
+Another view where two samples of code are viewed side by side (highlights can be used to mimic diffs)
+
+<DiffSlide>
+</DiffSlide>
+
+
